@@ -5,12 +5,12 @@ import Ozer1 from "../../img/ozer-proje-1.jpg";
 
 import "./projects.css";
 
-function Projects({ img, link }) {
+function Projects({ link }) {
   return (
-    <div>
+    <div className="p">
       <Container>
         <h2 className="card-h">Projelerim</h2>
-        <Row xs={1} md={3} className="g-4 mt-2 ">
+        <Row xs={2} md={3} className="g-4 mt-2 ">
           <Col>
             <div className="card-b">
               <a href={link}>

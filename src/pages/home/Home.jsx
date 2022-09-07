@@ -19,7 +19,7 @@ function Home() {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
   };
   return (
-    <div>
+    <div className="h">
       <div className={isScrolled ? "n scrolled" : "n"}>
         <Navbar className="position-fixed n w-100" variant="light">
           <Container>
@@ -48,15 +48,15 @@ function Home() {
         </Navbar>
       </div>
       <div>
-        <Carousel fade>
-          <Carousel.Item>
-            <img className="d-block w-100" src={Ozer1} alt="First slide" />
+        <Carousel className="c" fade>
+          <Carousel.Item className="c-i">
+            <img className="d-block w-100 " src={Ozer1} alt="First slide" />
             <Carousel.Caption>
               <h3>First slide label</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item>
+          <Carousel.Item className="c-i">
             <img className="d-block w-100" src={Ozer2} alt="Second slide" />
 
             <Carousel.Caption>
@@ -64,7 +64,7 @@ function Home() {
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item>
+          <Carousel.Item className="c-i">
             <img className="d-block w-100" src={Ozer3} alt="Third slide" />
 
             <Carousel.Caption>
