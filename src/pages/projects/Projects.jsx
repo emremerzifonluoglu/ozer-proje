@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState, useEffect } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
@@ -8,12 +8,44 @@ import InfoIcon from "@mui/icons-material/Info";
 import itemData from "../../data";
 import { Box, Container } from "@mui/material";
 
-export default function Detalle() {
+function Detalle() {
+  const breakpoints = {
+    xs: 0,
+    sm: 600,
+    md: 960,
+    lg: 1280,
+    xl: 1920,
+  };
+
+  const getColumns = (width) => {
+    if (width < breakpoints.sm) {
+      return 2;
+    } else if (width < breakpoints.md) {
+      return 3;
+    } else if (width < breakpoints.lg) {
+      return 6;
+    } else if (width < breakpoints.xl) {
+      return 7;
+    } else {
+      return 8;
+    }
+  };
+
+  const [columns, setColumns] = useState(getColumns(window.innerWidth));
+  const updateDimensions = () => {
+    setColumns(getColumns(window.innerWidth));
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
   return (
     <Box mt={9}>
       <Container maxWidth="xl">
         <ImageList sx={{ width: "100%", height: "100%" }}>
-          <ImageListItem key="Subheader" cols={6}>
+          <ImageListItem key="Subheader" cols={columns}>
             <ListSubheader component="div">December</ListSubheader>
           </ImageListItem>
           {itemData.map((item) => (
@@ -40,7 +72,7 @@ export default function Detalle() {
           ))}
         </ImageList>
         <ImageList sx={{ width: "100%", height: "100%" }}>
-          <ImageListItem key="Subheader" cols={6}>
+          <ImageListItem key="Subheader" cols={columns}>
             <ListSubheader component="div">December</ListSubheader>
           </ImageListItem>
           {itemData.map((item) => (
@@ -66,8 +98,8 @@ export default function Detalle() {
             </ImageListItem>
           ))}
         </ImageList>
-        <ImageList xs={12} md={2} sx={{ width: "100%", height: "100%" }}>
-          <ImageListItem key="Subheader" cols={6}>
+        <ImageList sx={{ width: "100%", height: "100%" }}>
+          <ImageListItem key="Subheader" cols={columns}>
             <ListSubheader component="div">December</ListSubheader>
           </ImageListItem>
           {itemData.map((item) => (
@@ -97,3 +129,4 @@ export default function Detalle() {
     </Box>
   );
 }
+export default Detalle;

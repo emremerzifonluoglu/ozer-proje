@@ -1,4 +1,4 @@
-import { Box, Grid, Link, Typography } from "@mui/material";
+import { Box, createTheme, Grid, Link, Typography } from "@mui/material";
 import React from "react";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -6,17 +6,44 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
 function footer() {
+  const theme = createTheme({
+    palette: {
+      neutral: {
+        main: "#64748B",
+        contrastText: "#fff",
+      },
+    },
+  });
   return (
-    <Box width="100%" height="70px">
+    <Box
+      bgcolor={theme.palette.neutral.main}
+      color={theme.palette.neutral.contrastText}
+      width="100%"
+      height="80px"
+    >
       <Grid container m={0} spacing={1} width="100%">
         <Grid xs={12} md={12} textAlign="center">
-          <Link underline="none" mr={3} href="/">
+          <Link
+            color={theme.palette.neutral.contrastText}
+            underline="none"
+            mr={3}
+            href="/"
+          >
             Ana Sayfa
           </Link>
-          <Link underline="none" href="/Projeler">
+          <Link
+            color={theme.palette.neutral.contrastText}
+            underline="none"
+            href="/Projeler"
+          >
             Projeler
           </Link>
-          <Link underline="none" ml={3} href="/İletişim">
+          <Link
+            color={theme.palette.neutral.contrastText}
+            underline="none"
+            ml={3}
+            href="/İletişim"
+          >
             İletişim
           </Link>
         </Grid>

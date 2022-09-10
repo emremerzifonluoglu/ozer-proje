@@ -10,6 +10,8 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import { createTheme } from "@mui/material";
+import ozerl from "../../img/logo.png";
 
 const pages = [
   {
@@ -30,6 +32,15 @@ const pages = [
   },
 ];
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "rgb(51,51,51,0.5)",
+      contrastText: "#fff",
+    },
+  },
+});
+
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -42,7 +53,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar color="transparent" position="fixed">
+    <AppBar theme={theme} position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -61,7 +72,7 @@ const Navbar = () => {
               textDecoration: "none",
             }}
           >
-            Özer Proje
+            <img src={ozerl} alt="" width="40px" />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -94,9 +105,14 @@ const Navbar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Typography variant="inherit" textAlign="center">
+                  <Button
+                    href={`/${page.name}`}
+                    key={page.id}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "black", display: "block" }}
+                  >
                     {page.id}
-                  </Typography>
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
@@ -106,7 +122,7 @@ const Navbar = () => {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -123,7 +139,7 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                href={`./${page.name}`}
+                href={`/${page.name}`}
                 key={page.id}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "black", display: "block" }}
