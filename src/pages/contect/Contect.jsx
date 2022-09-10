@@ -1,7 +1,7 @@
 import { useRef, useState, React } from "react";
 import emailjs from "@emailjs/browser";
 import "./contect.css";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { Container } from "react-bootstrap";
 import ContectForm from "../../components/contectForm/ContectForm";
 
@@ -36,7 +36,7 @@ function Contect() {
     e.target.reset();
   };
   return (
-    <>
+    <Box mt={9}>
       <ContectForm />
       <div className="i">
         <Container>
@@ -89,7 +89,7 @@ function Contect() {
           </div>
         </Container>
       </div>
-    </>
+    </Box>
   );
 }
 

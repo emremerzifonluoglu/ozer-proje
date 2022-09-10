@@ -1,6 +1,5 @@
 import { Box, Grid, Link, Typography } from "@mui/material";
 import React from "react";
-import "./footer.css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PinterestIcon from "@mui/icons-material/Pinterest";

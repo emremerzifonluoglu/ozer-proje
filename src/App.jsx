@@ -1,11 +1,10 @@
-// import İletişim from "./pages/contect/Contect";
-import Contect from "./components/contectForm/ContectForm";
+import Contect from "./pages/contect/Contect";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import About from "./pages/about/About";
-import Project from "./pages/detalle/Detalle";
+import Project from "./pages/projects/Projects";
 function App() {
   return (
     <div>
