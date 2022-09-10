@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import "./contect.css";
 import { Grid } from "@mui/material";
 import { Container } from "react-bootstrap";
+import ContectForm from "../../components/contectForm/ContectForm";
 
 function Contect() {
   const formRef = useRef();
@@ -35,57 +36,60 @@ function Contect() {
     e.target.reset();
   };
   return (
-    <div className="i">
-      <Container>
-        <div>
-          <h2 className="h2">İletişim Bilgileri</h2>
-          <Grid container spacing={2}>
-            <Grid xs={6}>
-              <iframe
-                className="iframe"
-                src="https://www.youtube.com/embed/93nY4__dRcs"
-                frameborder="0"
-                allow="autoplay; encrypted-media"
-                allowfullscreen
-                title="video"
-              />
+    <>
+      <ContectForm />
+      <div className="i">
+        <Container>
+          <div>
+            <h2 className="h2">İletişim Bilgileri</h2>
+            <Grid container spacing={2}>
+              <Grid xs={6}>
+                <iframe
+                  className="iframe"
+                  src="https://www.youtube.com/embed/93nY4__dRcs"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                  title="video"
+                />
+              </Grid>
+              <Grid xs={6}>
+                <form className="form" ref={formRef} onSubmit={handleSubmit}>
+                  <input
+                    className="input"
+                    type="text"
+                    placeholder="Name"
+                    name="user_name"
+                  />
+                  <input
+                    className="input"
+                    type="text"
+                    placeholder="Subject"
+                    name="user_subject"
+                  />
+                  <input
+                    className="input"
+                    type="text"
+                    placeholder="Email"
+                    name="user_email"
+                  />
+                  <textarea
+                    className="textarea"
+                    name="message"
+                    placeholder="Message"
+                    rows="5"
+                  ></textarea>
+                  <button className="button" type="submit">
+                    Submit
+                  </button>
+                  {done}
+                </form>
+              </Grid>
             </Grid>
-            <Grid xs={6}>
-              <form className="form" ref={formRef} onSubmit={handleSubmit}>
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="Name"
-                  name="user_name"
-                />
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="Subject"
-                  name="user_subject"
-                />
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="Email"
-                  name="user_email"
-                />
-                <textarea
-                  className="textarea"
-                  name="message"
-                  placeholder="Message"
-                  rows="5"
-                ></textarea>
-                <button className="button" type="submit">
-                  Submit
-                </button>
-                {done}
-              </form>
-            </Grid>
-          </Grid>
-        </div>
-      </Container>
-    </div>
+          </div>
+        </Container>
+      </div>
+    </>
   );
 }
 

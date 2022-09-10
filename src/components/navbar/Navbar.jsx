@@ -12,7 +12,24 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import "./navbar.css";
 
-const pages = ["Projeler", "Hizmetlerimiz", "Hakkımızda", "İletişim"];
+const pages = [
+  {
+    id: "Projeler",
+    name: "Project",
+  },
+  {
+    id: "Hizmetlerimiz",
+    name: "Services",
+  },
+  {
+    id: "Hakkımızda",
+    name: "About",
+  },
+  {
+    id: "İletişim",
+    name: "Contect",
+  },
+];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -77,9 +94,9 @@ const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
                   <Typography variant="inherit" textAlign="center">
-                    {page}
+                    {page.id}
                   </Typography>
                 </MenuItem>
               ))}
@@ -107,12 +124,12 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                href={`./${page}`}
-                key={page}
+                href={`./${page.name}`}
+                key={page.id}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "black", display: "block" }}
               >
-                {page}
+                {page.id}
               </Button>
             ))}
           </Box>
