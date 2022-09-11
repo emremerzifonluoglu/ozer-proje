@@ -1,41 +1,75 @@
-import React from "react";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Unstable_Grid2";
-import { Container, Typography } from "@mui/material";
-import PlaceIcon from "@mui/icons-material/Place";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import EmailIcon from "@mui/icons-material/Email";
+import { useRef, useState, React } from "react";
+import { Box, Container, Grid } from "@mui/material";
+import emailjs from "@emailjs/browser";
+import "./contectForm.css";
 
 function ContectForm() {
+  const formRef = useRef();
+  const [done, setDone] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_9o2enj4",
+        "template_xur8epq",
+        formRef.current,
+        "_EaloFev53ZB-a6rn"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setDone(true);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+
+    e.target.reset();
+  };
+
   return (
-    <Box
-      sx={{ backgroundColor: "white", flexGrow: 1 }}
-      width="100%"
-      height="400px"
-    >
+    <Box>
       <Container maxWidth="md">
-        <Grid container m={0} spacing={2}>
+        <Grid m={0} spacing={1}>
           <Grid xs={12} md={6}>
-            <Typography mt={3} variant="h5">
-              <PlaceIcon fontSize="large" /> ADRES
-            </Typography>
-            <Typography mt={2} variant="body2">
-              Sokak Adı Mahalle Adı Cadde Adı Semt Şehir Ülke
-            </Typography>
-            <Typography mt={3} variant="h5">
-              <LocalPhoneIcon fontSize="large" /> TELEFON
-            </Typography>
-            <Typography mt={2} variant="body2">
-              >> 0 212 403 19 22
-            </Typography>
-            <Typography mt={3} variant="h5">
-              <EmailIcon fontSize="large" /> E-POSTA
-            </Typography>
-            <Typography mt={2} variant="body2">
-              İnfo@ozerproje.com
-            </Typography>
+            <form className="form" ref={formRef} onSubmit={handleSubmit}>
+              <input
+                className="input"
+                type="text"
+                placeholder="Name"
+                name="user_name"
+              />
+              <input
+                className="input"
+                type="text"
+                placeholder="Subject"
+                name="user_subject"
+              />
+              <input
+                className="input"
+                type="text"
+                placeholder="Email"
+                name="user_email"
+              />
+              <textarea
+                className="textarea"
+                name="message"
+                placeholder="Message"
+                rows="5"
+              ></textarea>
+              <button className="button" type="submit">
+                Submit
+              </button>
+              {done}
+            </form>
           </Grid>
-          <Grid xs={12} md={6}></Grid>
         </Grid>
       </Container>
     </Box>

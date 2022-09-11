@@ -34,7 +34,7 @@ function footer() {
           <Link
             color={theme.palette.neutral.contrastText}
             underline="none"
-            href="/Projeler"
+            href="/Project"
           >
             Projeler
           </Link>
@@ -42,7 +42,7 @@ function footer() {
             color={theme.palette.neutral.contrastText}
             underline="none"
             ml={3}
-            href="/İletişim"
+            href="/Contect"
           >
             İletişim
           </Link>

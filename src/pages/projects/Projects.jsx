@@ -25,9 +25,9 @@ function Detalle() {
     } else if (width < breakpoints.lg) {
       return 6;
     } else if (width < breakpoints.xl) {
-      return 7;
+      return 6;
     } else {
-      return 8;
+      return 6;
     }
   };
 
@@ -39,14 +39,16 @@ function Detalle() {
   useEffect(() => {
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
+  });
 
   return (
-    <Box mt={9}>
+    <Box mt={11}>
       <Container maxWidth="xl">
         <ImageList sx={{ width: "100%", height: "100%" }}>
           <ImageListItem key="Subheader" cols={columns}>
-            <ListSubheader component="div">December</ListSubheader>
+            <ListSubheader component="div">
+              <h3>Spor Yapıları</h3>
+            </ListSubheader>
           </ImageListItem>
           {itemData.map((item) => (
             <ImageListItem key={item.img}>
@@ -58,7 +60,35 @@ function Detalle() {
               />
               <ImageListItemBar
                 title={item.title}
-                subtitle={item.author}
+                actionIcon={
+                  <IconButton
+                    sx={{ color: "rgba(255, 255, 255, 0.54)" }}
+                    aria-label={`info about ${item.title}`}
+                    href={item.img}
+                  >
+                    <InfoIcon />
+                  </IconButton>
+                }
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+        <ImageList sx={{ width: "100%", height: "100%" }}>
+          <ImageListItem key="Subheader" cols={columns}>
+            <ListSubheader component="div">
+              <h3>Sağlık Yapılar</h3>
+            </ListSubheader>
+          </ImageListItem>
+          {itemData.map((item) => (
+            <ImageListItem key={item.img}>
+              <img
+                src={`${item.img}?w=248&fit=crop&auto=format`}
+                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                alt={item.title}
+                loading="lazy"
+              />
+              <ImageListItemBar
+                title={item.title}
                 actionIcon={
                   <IconButton
                     sx={{ color: "rgba(255, 255, 255, 0.54)" }}
@@ -73,7 +103,9 @@ function Detalle() {
         </ImageList>
         <ImageList sx={{ width: "100%", height: "100%" }}>
           <ImageListItem key="Subheader" cols={columns}>
-            <ListSubheader component="div">December</ListSubheader>
+            <ListSubheader component="div">
+              <h3>Karma Yapılar</h3>
+            </ListSubheader>
           </ImageListItem>
           {itemData.map((item) => (
             <ImageListItem key={item.img}>
@@ -85,34 +117,6 @@ function Detalle() {
               />
               <ImageListItemBar
                 title={item.title}
-                subtitle={item.author}
-                actionIcon={
-                  <IconButton
-                    sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                    aria-label={`info about ${item.title}`}
-                  >
-                    <InfoIcon />
-                  </IconButton>
-                }
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-        <ImageList sx={{ width: "100%", height: "100%" }}>
-          <ImageListItem key="Subheader" cols={columns}>
-            <ListSubheader component="div">December</ListSubheader>
-          </ImageListItem>
-          {itemData.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-              <ImageListItemBar
-                title={item.title}
-                subtitle={item.author}
                 actionIcon={
                   <IconButton
                     sx={{ color: "rgba(255, 255, 255, 0.54)" }}

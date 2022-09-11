@@ -1,6 +1,6 @@
 import ImgCarousel from "../../components/carousel/ImgCarousel";
-import ContectForm from "../../components/contectForm/ContectForm";
-import About from "../about/About";
+import ContectInfo from "../../components/contectInfo/ContectInfo";
+import AboutMe from "../../components/aboutMe/AboutMe";
 // import Contect from "../contect/Contect";
 import Card from "../../components/card/Cards";
 import { Box, createTheme } from "@mui/material";
@@ -17,9 +17,9 @@ function Home() {
   return (
     <Box bgcolor={theme.palette.neutral.main}>
       <ImgCarousel />
-      <About />
+      <AboutMe />
       <Card />
-      <ContectForm />
+      <ContectInfo />
       {/* <Contect /> */}
     </Box>
   );
