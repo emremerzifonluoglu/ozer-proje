@@ -136,7 +136,14 @@ const Navbar = () => {
           >
             <img src={ozerl} alt="" width="40px" />
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            mr={7}
+            sx={{
+              justifyContent: "flex-end",
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+            }}
+          >
             {pages.map((page) => (
               <Button
                 href={`/${page.name}`}
