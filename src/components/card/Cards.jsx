@@ -9,54 +9,113 @@ import {
   Grid,
   CardActions,
   Button,
+  createTheme,
+  ThemeProvider,
 } from "@mui/material";
 import Ozer from "../../img/ozer-proje-1.jpg";
-export default function ActionAreaCard() {
+function ActionAreaCard() {
+  const theme = createTheme({
+    palette: {
+      neutral: {
+        main: "rgb(238, 238, 238)",
+        contrastText: "#fff",
+      },
+      secondary: {
+        main: "rgb(57, 62, 70)",
+        contrastText: "#fff",
+      },
+    },
+  });
   return (
-    <Container maxWidth="lg">
-      <Box mt={4}>
-        <Typography variant="h3" m={4}>
-          Başlıca Projelerim
-        </Typography>
-        <Grid container m={0} spacing={3}>
-          <Grid xs={12} md={4} mb={3}>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea href="/Project">
-                <CardMedia component="img" height="250" image={Ozer} alt=" " />
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" fullWidth href="/Project">
-                  Learn More
-                </Button>
-              </CardActions>
-            </Card>
+    <Box
+      bgcolor={theme.palette.neutral.main}
+      color={theme.palette.neutral.main}
+    >
+      <Container maxWidth="lg">
+        <Box mt={4}>
+          <Typography color="black" variant="h3" m={4}>
+            Başlıca Projelerim
+          </Typography>
+          <Grid container m={0} spacing={3}>
+            <Grid xs={12} md={4} mb={3}>
+              <Card sx={{ maxWidth: 345 }}>
+                <CardActionArea href="/Project">
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    image={Ozer}
+                    alt=" "
+                  />
+                </CardActionArea>
+                <CardActions>
+                  <ThemeProvider theme={theme}>
+                    <Button
+                      color="secondary"
+                      variant="contained"
+                      size="small"
+                      fullWidth
+                      href="/Project"
+                    >
+                      Learn More
+                    </Button>
+                  </ThemeProvider>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid xs={12} md={4} mb={3}>
+              <Card sx={{ maxWidth: 345 }}>
+                <CardActionArea href="/Project">
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    image={Ozer}
+                    alt=" "
+                  />
+                </CardActionArea>
+                <CardActions>
+                  <ThemeProvider theme={theme}>
+                    <Button
+                      color="secondary"
+                      variant="contained"
+                      size="small"
+                      fullWidth
+                      href="/Project"
+                    >
+                      Learn More
+                    </Button>
+                  </ThemeProvider>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid xs={12} md={4} mb={3}>
+              <Card sx={{ maxWidth: 345 }}>
+                <CardActionArea href="/Project">
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    image={Ozer}
+                    alt=" "
+                  />
+                </CardActionArea>
+                <CardActions>
+                  <ThemeProvider theme={theme}>
+                    <Button
+                      color="secondary"
+                      variant="contained"
+                      size="small"
+                      fullWidth
+                      href="/Project"
+                    >
+                      Learn More
+                    </Button>
+                  </ThemeProvider>
+                </CardActions>
+              </Card>
+            </Grid>
           </Grid>
-          <Grid xs={12} md={4} mb={3}>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea href="/Project">
-                <CardMedia component="img" height="250" image={Ozer} alt=" " />
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" fullWidth href="/Project">
-                  Learn More
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-          <Grid xs={12} md={4} mb={3}>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea href="/Project">
-                <CardMedia component="img" height="250" image={Ozer} alt=" " />
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" fullWidth href="/Project">
-                  Learn More
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-        </Grid>
-      </Box>
-    </Container>
+        </Box>
+      </Container>
+    </Box>
   );
 }
+export default ActionAreaCard;

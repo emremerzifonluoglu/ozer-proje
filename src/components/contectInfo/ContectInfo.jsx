@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
-import { Container, Typography } from "@mui/material";
+import { Container, createTheme, Typography } from "@mui/material";
 import PlaceIcon from "@mui/icons-material/Place";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
@@ -17,12 +17,21 @@ function ContectInfo() {
   return <Map />;
 }
 
+const theme = createTheme({
+  palette: {
+    neutral: {
+      main: "rgb(238, 238, 238)",
+      contrastText: "#fff",
+    },
+  },
+});
 function Map() {
   const center = useMemo(() => ({ lat: 36.8622774, lng: 30.8023579 }), []);
   return (
     <Box
       mt={5}
-      sx={{ backgroundColor: "white", flexGrow: 1 }}
+      bgcolor={theme.palette.neutral.main}
+      sx={{ flexGrow: 1 }}
       width="100%"
       height="400px"
     >

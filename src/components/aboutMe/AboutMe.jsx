@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Unstable_Grid2";
-import { Container, Typography } from "@mui/material";
+import { Container, createTheme, Typography } from "@mui/material";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -17,8 +17,16 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function About() {
+  const theme = createTheme({
+    palette: {
+      neutral: {
+        main: "rgb(238, 238, 238)",
+        contrastText: "#fff",
+      },
+    },
+  });
   return (
-    <Box sx={{ backgroundColor: "white", flexGrow: 1 }}>
+    <Box bgcolor={theme.palette.neutral.main} sx={{ flexGrow: 1 }}>
       <Container maxWidth="lg">
         <Grid container m={0} spacing={2}>
           <Grid xs={12} md={6}>
@@ -27,7 +35,6 @@ function About() {
                 Biz Kimiz?
               </Typography>
               <Typography variant="body1" align="center" mt={4}>
-                {" "}
                 yapı uzmanlık alanında betonarme, çelik projeleri hizmeti
                 sunmaktadır. Kuruluşundan günümüze inşaat mühendisliği alanında
                 yurt içinde çeşitli projeler gerçekleştirmiş olup, değişen dünya
@@ -36,9 +43,7 @@ function About() {
                 edinmiştir Tasarım, tasarım geliştirme, avan proje, kesin proje,
                 uygulama ve detay projeleri ve ihale dosyası hazırlanması gibi
                 çeşitli proje aşamalarının gerçekleşmesiyle ilgili hizmetlerdir.
-                Uzman ekibimiz ile <b>
-                  3E (Emniyet -- Ekonomik -- Estetik)
-                </b>{" "}
+                Uzman ekibimiz ile <b>3E (Emniyet -- Ekonomik -- Estetik)</b>{" "}
                 kapsamında sizlere daha iyi hizmet vermek istiyoruz.
               </Typography>
             </Item>

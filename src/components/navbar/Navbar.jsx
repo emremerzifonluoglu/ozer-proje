@@ -15,6 +15,10 @@ import ozerl from "../../img/logo.png";
 
 const pages = [
   {
+    id: "Ana Sayfa",
+    name: "Home",
+  },
+  {
     id: "Projeler",
     name: "Project",
   },
@@ -35,7 +39,7 @@ const pages = [
 const theme = createTheme({
   palette: {
     primary: {
-      main: "rgb(51,51,51,0.5)",
+      main: "rgb(34, 40, 49, 0.7)",
       contrastText: "#fff",
     },
   },
@@ -63,12 +67,12 @@ const Navbar = () => {
             component="a"
             href="/"
             sx={{
-              mr: 2,
+              ml: 5,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "whitesmoke",
               textDecoration: "none",
             }}
           >
@@ -149,7 +153,12 @@ const Navbar = () => {
                 href={`/${page.name}`}
                 key={page.id}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "black", display: "block" }}
+                sx={{
+                  marginRight: 5,
+                  my: 2,
+                  color: "whitesmoke",
+                  display: "block",
+                }}
               >
                 {page.id}
               </Button>

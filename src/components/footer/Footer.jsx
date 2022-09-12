@@ -9,7 +9,7 @@ function footer() {
   const theme = createTheme({
     palette: {
       neutral: {
-        main: "#64748B",
+        main: "rgb(34, 40, 49)",
         contrastText: "#fff",
       },
     },

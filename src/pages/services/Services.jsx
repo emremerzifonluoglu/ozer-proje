@@ -4,7 +4,7 @@ import ServicesContent from "../../components/servicesContent/ServicesContent";
 
 function Services() {
   return (
-    <Box mt={10}>
+    <Box mt={9}>
       <ServicesContent />
     </Box>
   );

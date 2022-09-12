@@ -8,7 +8,7 @@ function Home() {
   const theme = createTheme({
     palette: {
       neutral: {
-        main: "#64748B",
+        main: "rgb(238, 238, 238)",
         contrastText: "#fff",
       },
     },

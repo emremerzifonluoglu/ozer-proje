@@ -1,11 +1,31 @@
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  createTheme,
+  Grid,
+  ThemeProvider,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import Kesif from "../../img/kesif.png";
 import Danisman from "../../img/danisman.png";
 
 function ServicesContent() {
+  const theme = createTheme({
+    palette: {
+      neutral: {
+        main: "rgb(238, 238, 238)",
+        contrastText: "#fff",
+      },
+      secondary: {
+        main: "rgb(57, 62, 70)",
+        contrastText: "#fff",
+      },
+    },
+  });
   return (
-    <Box>
+    <Box bgcolor={theme.palette.neutral.main}>
       <Container maxWidth="lg">
         <Box padding={5}>
           <Grid container m={0} spacing={1}>
@@ -18,8 +38,14 @@ function ServicesContent() {
             </Typography>
           </Grid>
         </Box>
-        <Box mt={10} mb={5}>
-          <Grid container m={0} spacing={2} align="center">
+        <Box mt={10} paddingBottom={5}>
+          <Grid
+            container
+            m={0}
+            spacing={2}
+            align="center"
+            bgcolor={theme.palette.neutral.contrastText}
+          >
             <Grid
               xs={12}
               md={6}
@@ -79,14 +105,16 @@ function ServicesContent() {
                   </li>
                 </ul>
               </Typography>
-              <Button
-                fullWidth
-                href="/Contect"
-                color="success"
-                variant="contained"
-              >
-                İletişim İçin Tıklayın
-              </Button>
+              <ThemeProvider theme={theme}>
+                <Button
+                  fullWidth
+                  href="/Contect"
+                  color="secondary"
+                  variant="contained"
+                >
+                  İletişim İçin Tıklayın
+                </Button>
+              </ThemeProvider>
             </Grid>
             <Grid
               xs={12}
@@ -153,14 +181,16 @@ function ServicesContent() {
                   </p>
                 </ul>
               </Typography>
-              <Button
-                fullWidth
-                href="/Contect"
-                color="success"
-                variant="contained"
-              >
-                İletişim İçin Tıklayın
-              </Button>
+              <ThemeProvider theme={theme}>
+                <Button
+                  fullWidth
+                  href="/Contect"
+                  color="secondary"
+                  variant="contained"
+                >
+                  İletişim İçin Tıklayın
+                </Button>
+              </ThemeProvider>
             </Grid>
           </Grid>
         </Box>
