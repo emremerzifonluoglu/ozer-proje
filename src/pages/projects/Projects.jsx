@@ -12,7 +12,7 @@ function Detalle() {
   const theme = createTheme({
     palette: {
       neutral: {
-        main: "#000",
+        main: "rgb(255, 255, 255)",
         contrastText: "#fff",
       },
       secondary: {
@@ -55,7 +55,7 @@ function Detalle() {
   });
 
   return (
-    <Box mt={11} bgcolor={theme.palette.neutral.main}>
+    <Box mt={9} bgcolor={theme.palette.neutral.main}>
       <Container maxWidth="xl">
         <ImageList sx={{ width: "100%", height: "100%" }}>
           <ImageListItem key="Subheader" cols={columns}>
