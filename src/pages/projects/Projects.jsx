@@ -6,9 +6,22 @@ import ListSubheader from "@mui/material/ListSubheader";
 import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
 import itemData from "../../data";
-import { Box, Container } from "@mui/material";
+import { Box, Container, createTheme } from "@mui/material";
 
 function Detalle() {
+  const theme = createTheme({
+    palette: {
+      neutral: {
+        main: "#000",
+        contrastText: "#fff",
+      },
+      secondary: {
+        main: "rgb(57, 62, 70)",
+        contrastText: "#fff",
+      },
+    },
+  });
+
   const breakpoints = {
     xs: 0,
     sm: 600,
@@ -42,7 +55,7 @@ function Detalle() {
   });
 
   return (
-    <Box mt={11}>
+    <Box mt={11} bgcolor={theme.palette.neutral.main}>
       <Container maxWidth="xl">
         <ImageList sx={{ width: "100%", height: "100%" }}>
           <ImageListItem key="Subheader" cols={columns}>

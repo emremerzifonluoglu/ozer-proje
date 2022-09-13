@@ -65,7 +65,7 @@ const Navbar = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/Home"
             sx={{
               ml: 5,
               display: { xs: "none", md: "flex" },
@@ -126,7 +126,7 @@ const Navbar = () => {
             variant="h5"
             noWrap
             component="a"
-            href="/"
+            href="/Home"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
