@@ -7,6 +7,7 @@ import { Container, createTheme, Typography } from "@mui/material";
 import PlaceIcon from "@mui/icons-material/Place";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
+import Mapimg from "../../img/map.bmp";
 
 function ContectInfo() {
   const { isLoaded } = useLoadScript({
@@ -30,6 +31,7 @@ function Map() {
   return (
     <Box
       mt={5}
+      mb={10}
       bgcolor={theme.palette.neutral.main}
       sx={{ flexGrow: 1 }}
       width="100%"
@@ -57,8 +59,12 @@ function Map() {
               İnfo@ozerproje.com
             </Typography>
           </Grid>
-          <Grid xs={12} md={8}>
-            <GoogleMap
+          <Grid xs={0} md={8}>
+            <Box>
+              <img width="90%" src={Mapimg} alt="" />
+            </Box>
+
+            {/* <GoogleMap
               zoom={18}
               center={center}
               mapContainerClassName="map-container"
@@ -66,7 +72,7 @@ function Map() {
               <Box height="350px">
                 <Marker position={center} />
               </Box>
-            </GoogleMap>
+            </GoogleMap> */}
           </Grid>
         </Grid>
       </Container>

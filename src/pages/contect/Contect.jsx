@@ -5,7 +5,7 @@ import ContectInfo from "../../components/contectInfo/ContectInfo";
 
 function Contect() {
   return (
-    <Box mt={10}>
+    <Box mt={9}>
       <ContectInfo />
       <ContectForm />
     </Box>

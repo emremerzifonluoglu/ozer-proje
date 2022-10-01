@@ -106,6 +106,7 @@ function Detalle() {
                   <IconButton
                     sx={{ color: "rgba(255, 255, 255, 0.54)" }}
                     aria-label={`info about ${item.title}`}
+                    href={item.img}
                   >
                     <InfoIcon />
                   </IconButton>
@@ -134,6 +135,7 @@ function Detalle() {
                   <IconButton
                     sx={{ color: "rgba(255, 255, 255, 0.54)" }}
                     aria-label={`info about ${item.title}`}
+                    href={item.img}
                   >
                     <InfoIcon />
                   </IconButton>

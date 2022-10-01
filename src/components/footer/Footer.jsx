@@ -19,7 +19,7 @@ function footer() {
       bgcolor={theme.palette.neutral.main}
       color={theme.palette.neutral.contrastText}
       width="100%"
-      height="80px"
+      height="16vh"
     >
       <Grid container m={0} spacing={1} width="100%">
         <Grid xs={12} md={12} textAlign="center">
