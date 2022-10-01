@@ -31,7 +31,6 @@ function Map() {
   return (
     <Box
       mt={5}
-      mb={10}
       bgcolor={theme.palette.neutral.main}
       sx={{ flexGrow: 1 }}
       width="100%"
