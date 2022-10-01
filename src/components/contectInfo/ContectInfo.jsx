@@ -1,6 +1,6 @@
 import React from "react";
-import { useMemo } from "react";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+// import { useMemo } from "react";
+import { useLoadScript } from "@react-google-maps/api";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import { Container, createTheme, Typography } from "@mui/material";
@@ -27,7 +27,7 @@ const theme = createTheme({
   },
 });
 function Map() {
-  const center = useMemo(() => ({ lat: 36.8622774, lng: 30.8023579 }), []);
+  // const center = useMemo(() => ({ lat: 36.8622774, lng: 30.8023579 }), []);
   return (
     <Box
       mt={5}
